@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "title": "Progetto mediterraneo",
+    "description": "Desideriamo proporre un modello di sviluppo che metta al centro letica e la solidarietà, a partire dal rispetto reciproco di persone, produttori, lavoratori e consumatori. In ogni nostro progetto lavoriamo nel recupero di tradizioni e culture locali, in armonia con i ritmi della natura; Affinché rispetto di uomo e ambiente siano sempre al centro.",
+    "date": "2024/01/01",
+    "maxSeats": 100
+  },
+  {
+    "id": 2,
+    "title": "Antimafia 2000",
+    "description": "L'evento Antimafia Duemila è un'iniziativa dedicata alla sensibilizzazione e alla mobilitazione contro la criminalità organizzata, con particolare attenzione al fenomeno mafioso. Questo evento mira a coinvolgere attivamente la comunità, promuovendo la consapevolezza, la partecipazione civica e la lotta contro le attività criminali che minacciano la sicurezza e la giustizia.",
+    "date": "2024/02/02",
+    "maxSeats": 200
+  },
+  {
+    "id": {
+      "id": "1",
+      "title": "Conferenza",
+      "description": "Una conferenza interessante",
+      "date": "2023-12-01",
+      "maxSeats": 100
+    }
+  }
+]
