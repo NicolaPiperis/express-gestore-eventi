@@ -18,10 +18,14 @@ class EventModel {
     }
 
     
-    static readEvents() {
+    static readEvents(filters) {
         let filePath = path.join(__dirname, ('../db/events.json'));
-        
         let events = JSON.parse(fs.readFileSync( filePath, "utf8"));
+
+        // Applica i filtri, se presenti
+        if (filters && Object.keys(filters).length > 0) {
+            events = applyFilters(events, filters);
+        }
         return events
         
     }
@@ -47,12 +51,21 @@ class EventModel {
     
 }
 const newEvent = new EventModel({
-    id: '1',
+    id: '3',
     title: 'Conferenza',
     description: 'Una conferenza interessante',
     date: '2023-12-01',
     maxSeats: 100
 });
+
+function applyFilters(events, filters) {
+    // Esempio: Filtrare per titolo
+    if (filters.title) {
+        events = events.filter(event => event.title.toLowerCase().includes(filters.title.toLowerCase()));
+    }
+    // Aggiungi altri filtri a seconda delle tue esigenze
+    return events;
+}
 
 module.exports = {
     EventModel, 
