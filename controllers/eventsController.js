@@ -13,9 +13,16 @@ function index(req, res) {
 function store(req, res) {
     const newEvent = new EventModel(3, 'Conferenza', 'Una conferenza interessante', '2023-12-01', 100);
 
-    events.push(newEvent)
-    EventModel.writeEvents(events);
-    res.json(events);
+    const existingEvent = events.find(event => event.id === newEvent.id);
+
+    if (!existingEvent) {
+        // Se l'evento non esiste già, pushalo nell'array
+        events.push(newEvent);
+        EventModel.writeEvents(events);
+        res.json(events);
+    } else {
+        res.status(400).json({ error: 'L\'evento con lo stesso ID esiste già' });
+    }
 }
 
 function show(req, res) {

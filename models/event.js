@@ -41,7 +41,7 @@ class EventModel {
         let events = JSON.parse(fs.readFileSync( filePath, "utf8"));
 
 
-        return events.find(event => event.id === eventId);
+        return events.find(event => event.id == eventId);
     }
     
     // Metodo statico per salvare un nuovo evento nel file JSON
