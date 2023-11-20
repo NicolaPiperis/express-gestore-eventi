@@ -11,6 +11,8 @@ router.get('/', eventsController.index);
 // Rotta per creare un nuovo evento
 router.post('/', eventsController.store);
 
+router.get('/:id', eventsController.show);
+
 // Rotta per aggiornare un evento esistente
 // Nota: ':event' è un parametro dinamico che rappresenta l'ID dell'evento da aggiornare
 router.put('/:event', eventsController.update);

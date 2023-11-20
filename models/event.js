@@ -18,14 +18,11 @@ class EventModel {
     }
 
     
-    static readEvents(filters) {
+    static readEvents() {
         let filePath = path.join(__dirname, ('../db/events.json'));
         let events = JSON.parse(fs.readFileSync( filePath, "utf8"));
 
-        // Applica i filtri, se presenti
-        if (filters && Object.keys(filters).length > 0) {
-            events = applyFilters(events, filters);
-        }
+
         return events
         
     }
@@ -40,7 +37,11 @@ class EventModel {
 
     // Metodo statico per ottenere un evento specifico dal file JSON
     static getEventById(eventId) {
-        
+        let filePath = path.join(__dirname, ('../db/events.json'));
+        let events = JSON.parse(fs.readFileSync( filePath, "utf8"));
+
+
+        return events.find(event => event.id === eventId);
     }
     
     // Metodo statico per salvare un nuovo evento nel file JSON
@@ -50,13 +51,7 @@ class EventModel {
     }
     
 }
-const newEvent = new EventModel({
-    id: '3',
-    title: 'Conferenza',
-    description: 'Una conferenza interessante',
-    date: '2023-12-01',
-    maxSeats: 100
-});
+
 
 function applyFilters(events, filters) {
     // Esempio: Filtrare per titolo
@@ -68,6 +63,5 @@ function applyFilters(events, filters) {
 }
 
 module.exports = {
-    EventModel, 
-    newEvent
+    EventModel
 }
