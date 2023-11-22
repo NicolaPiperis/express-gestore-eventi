@@ -43,6 +43,9 @@ class EventModel {
 
         return events.find(event => event.id == eventId);
     }
+    static getEventByTitle(title) {
+
+    }
     
     // Metodo statico per salvare un nuovo evento nel file JSON
     static saveNewEvent(newEvent) {
@@ -53,14 +56,6 @@ class EventModel {
 }
 
 
-function applyFilters(events, filters) {
-    // Esempio: Filtrare per titolo
-    if (filters.title) {
-        events = events.filter(event => event.title.toLowerCase().includes(filters.title.toLowerCase()));
-    }
-    // Aggiungi altri filtri a seconda delle tue esigenze
-    return events;
-}
 
 module.exports = {
     EventModel

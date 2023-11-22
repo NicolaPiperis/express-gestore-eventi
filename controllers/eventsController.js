@@ -5,7 +5,12 @@ const events = require('../db/events.json');
 
 // Funzione per ottenere tutti gli eventi
 function index(req, res) {
-    const events = EventModel.readEvents();
+    let events = EventModel.readEvents();
+    if(req.query.title) {
+        events = events.filter((e) => {
+            return e.title == req.query.title
+        })
+    }
     res.json(events);
 
 }
