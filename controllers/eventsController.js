@@ -16,7 +16,12 @@ function index(req, res) {
 }
 // Funzione per creare un nuovo evento
 function store(req, res) {
-    const newEvent = new EventModel(3, 'Conferenza', 'Una conferenza interessante', '2023-12-01', 100);
+    // const newEvent = new EventModel(3, 'Conferenza', 'Una conferenza interessante', '2023-12-01', 100);
+    let bodyData = req.body;
+    const newEvent = {
+        bodyData
+    }
+
 
     const existingEvent = events.find(event => event.id === newEvent.id);
 

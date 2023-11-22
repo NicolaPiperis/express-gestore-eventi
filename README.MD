@@ -31,6 +31,7 @@ Creiamo le seguenti rotte per gestire le prenotazioni
 [DELETE] events/:event/reservations/:reservation (destroy)
 
 Creiamo il model models/reservation.js e prevediamo le seguenti proprietà
+
 id
 firstName
 lastName

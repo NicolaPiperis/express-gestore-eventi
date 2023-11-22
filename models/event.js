@@ -43,15 +43,7 @@ class EventModel {
 
         return events.find(event => event.id == eventId);
     }
-    static getEventByTitle(title) {
-
-    }
     
-    // Metodo statico per salvare un nuovo evento nel file JSON
-    static saveNewEvent(newEvent) {
-        
-        
-    }
     
 }
 
